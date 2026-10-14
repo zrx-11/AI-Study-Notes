@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 机理深度研习系列</title>
+<style>
+:root{
+  --bg:#f7f4ec; --bg-elev:#fffdf7; --bg-sidebar:#efe9db; --fg:#2b2a27; --muted:#6b665c;
+  --accent:#b8742a; --accent-soft:#e8d9bf; --border:#d9d2c2; --code-bg:#f0ead9;
+  --shadow:0 2px 10px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--fg);line-height:1.7;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;
+}
+.container{max-width:800px;width:100%;padding:40px 24px;flex:1;}
+h1{font-size:2.2em;margin-bottom:8px;line-height:1.3;}
+.subtitle{color:var(--muted);font-size:1.1em;margin-bottom:32px;}
+.card{
+  background:var(--bg-elev);border:1px solid var(--border);border-radius:12px;
+  padding:24px 28px;margin-bottom:16px;box-shadow:var(--shadow);
+  transition:transform .15s, box-shadow .15s;
+}
+.card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.1);}
+.card h2{font-size:1.2em;margin-bottom:8px;color:var(--accent);}
+.card p{color:var(--muted);font-size:.95em;margin-bottom:12px;}
+.btn{
+  display:inline-block;background:var(--accent);color:#fff;padding:8px 20px;
+  border-radius:6px;text-decoration:none;font-size:.9em;font-weight:500;
+  margin-right:8px;margin-top:4px;
+}
+.btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent);}
+.btn:hover{opacity:.9;}
+.stats{display:flex;gap:24px;margin:24px 0;flex-wrap:wrap;}
+.stat{text-align:center;}
+.stat-num{font-size:1.8em;font-weight:700;color:var(--accent);}
+.stat-label{font-size:.85em;color:var(--muted);}
+.books{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px;}
+.book-item{
+  background:var(--accent-soft);border-radius:8px;padding:14px 16px;
+  font-size:.9em;
+}
+.book-item strong{color:var(--accent);display:block;margin-bottom:4px;}
+footer{
+  margin-top:40px;padding:20px;text-align:center;color:var(--muted);
+  font-size:.85em;border-top:1px solid var(--border);width:100%;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>AI 机理深度研习系列</h1>
+  <p class="subtitle">从数学推导到工程实现 · 五册 126 讲 · 系统理解 AI 底层原理</p>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">册书</div></div>
+    <div class="stat"><div class="stat-num">126</div><div class="stat-label">讲</div></div>
+    <div class="stat"><div class="stat-num">546</div><div class="stat-label">页 PDF</div></div>
+    <div class="stat"><div class="stat-num">132</div><div class="stat-label">段可运行代码</div></div>
+  </div>
+
+  <div class="card">
+    <h2>📖 在线阅读（推荐）</h2>
+    <p>交互式 HTML 版本，左侧目录可折叠跳转，深浅色主题切换，完全离线可用。</p>
+    <a class="btn" href="HTML版/AI机理深度研习系列.html">开始阅读</a>
+  </div>
+
+  <div class="card">
+    <h2>📄 PDF 下载</h2>
+    <p>全五册合订本，xelatex 编译，中文正常，公式原生排版。</p>
+    <a class="btn" href="PDF版/AI机理深度研习系列_全五册合订本.pdf">下载合订本</a>
+  </div>
+
+  <div class="card">
+    <h2>✏️ Markdown 源文件</h2>
+    <p>每讲独立 .md 文件，可在 Typora / Obsidian / VS Code 中二次编辑。</p>
+    <a class="btn secondary" href="讲义/README.md">查看讲义索引</a>
+    <a class="btn secondary" href="合订版/AI机理深度研习系列_全五册合订本.md">合订版 Markdown</a>
+  </div>
+
+  <div class="card">
+    <h2>📚 五册内容</h2>
+    <div class="books">
+      <div class="book-item">
+        <strong>第一册 · Transformer 推导 30 讲</strong>
+        从零推导注意力机制、位置编码、训练稳定化、RoPE / FlashAttention / MoE，最终手写 mini-Transformer。
+      </div>
+      <div class="book-item">
+        <strong>第二册 · 从信息论做科研</strong>
+        熵 / KL 散度 / 率失真 → 熵正则 → 表示学习 → 大模型信息论专题。
+      </div>
+      <div class="book-item">
+        <strong>第三册 · 量子理论下的科研</strong>
+        希尔伯特空间 → 叠加 / 纠缠 / 测量 → 量子 ML → 量子算法。
+      </div>
+      <div class="book-item">
+        <strong>第四册 · Agent 你需要懂什么</strong>
+        大模型 + 工具 + 循环 + 记忆 → ReAct / Plan-and-Execute → 多智能体 → 安全与对齐。
+      </div>
+      <div class="book-item">
+        <strong>第五册 · AI 时代下的运筹学</strong>
+        线性规划 → 动态规划 → 整数规划 → 强化学习 → AI4OR / OR4AI。
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  AI 机理深度研习系列 · 仅供学习交流使用
+</footer>
+</body>
+</html>
